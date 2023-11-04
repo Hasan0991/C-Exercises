@@ -1,0 +1,20 @@
+#include<iostream>
+
+int main() {
+	int number;
+	int check_number = 0;
+	std::cout << "enter the number" << std::endl;
+	std::cin >> number;
+	int original_number = number;
+	for (int i = number; number > 0; i++) {
+		int digit = number % 10;
+		check_number = (check_number * 10) + digit;
+		number = number / 10;
+	}
+	if (original_number == check_number) {
+		std::cout << "number is palidrome" << std::endl;
+	}
+	else {
+		std::cout << "number is not palidrome" << std::endl;
+	}
+}
