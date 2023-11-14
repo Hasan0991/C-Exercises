@@ -1,0 +1,43 @@
+#include <iostream>
+#include <ctime> 
+#include <iomanip>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+    srand(time(NULL));
+    int A = rand() % 100; 
+    int B = A + rand() % 100;
+
+    int guess = A + rand() % (B - A + 1);
+
+    int attempts;
+    cout << "enter number of attempts" << endl;
+    cin >> attempts;
+    int count = 0;
+    
+    for (int i = 0; i <= attempts; i++) {
+        int number;
+        cout << "enter the number" << endl;
+        cin >> number;
+        if (guess > number) {
+            cout << "number is bigger" << endl;
+            count += 1;
+        }
+        else if (guess < number) {
+            cout << "number is smaller" << endl;
+            count += 1;
+        }
+        else {
+            cout << "Congratularions";
+            cout << "number of attempts left = " << " " << count;
+            break;
+        }
+    }
+    cout << "you reached number of attemots" <<endl;
+    cout << "the range on numbers were from " << A << "to " << B << endl;;
+    cout << "number to guess was " << guess;
+    return 0;
+}
